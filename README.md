@@ -49,13 +49,12 @@
 
 ### Prerequisites
 
-| Requirement | Minimum Version | Notes |
-|---|---|---|
-| **CMake** | 3.21 | Build system |
-| **Compiler** | MSVC (Visual Studio 2022) or clang-cl | C++23 support required |
-| **Platform** | Windows x64 | |
-| **vcpkg** | Latest | Dependency management |
-| **vcpkg triplet** | `x64-windows-skse` | Custom overlay triplet provided |
+| Requirement | Minimum Version | 
+|---|---|
+| **CMake** | 3.21 | 
+| **Compiler** | MSVC (Visual Studio 2022) 
+| **vcpkg** | Latest | 
+| **vcpkg triplet** | `x64-windows-skse` | 
 
 ### Dependencies
 
@@ -91,8 +90,6 @@ cmake --build --preset=debug-msvc
 |---|---|
 | `build-release-msvc` | Optimized release build (RelWithDebInfo) with MSVC |
 | `build-debug-msvc` | Debug build with MSVC |
-| `build-release-clang-cl` | Optimized release build with clang-cl |
-| `build-debug-clang-cl` | Debug build with clang-cl |
 | `release-msvc` | Build preset for release (MSVC) |
 | `debug-msvc` | Build preset for debug (MSVC) |
 | `tests-all` | Run all tests |
@@ -112,27 +109,6 @@ cmake -S . -B build -G Ninja `
 
 cmake --build build --config RelWithDebInfo
 ```
-
-**Key CMake variables:**
-
-| Variable | Description |
-|---|---|
-| `VCPKG_TARGET_TRIPLET` | vcpkg target triplet (`x64-windows-skse`) |
-| `VCPKG_OVERLAY_TRIPLETS` | Path to custom overlay triplets directory |
-| `CMAKE_MSVC_RUNTIME_LIBRARY` | Runtime linkage (`MultiThreadedDLL` / `MultiThreadedDebugDLL`) |
-| `BUILD_TESTS` | Enable unit tests (`ON`/`OFF`) |
-
-### Deployment
-
-Set the `PluginDeployTarget` environment variable for automatic deployment:
-
-```powershell
-$env:PluginDeployTarget = "C:\Program Files\Steam\steamapps\common\Skyrim Special Edition"
-cmake --build build --config RelWithDebInfo
-```
-
-This copies `DeviousDevices.dll` (and `.pdb` for Debug/RelWithDebInfo) to `<SkyrimDir>/SKSE/Plugins/`.
-
 ---
 
 *Devious Devices NG is a community project and is not affiliated with the original Devious Devices mod.*
