@@ -90,8 +90,6 @@ cmake --build --preset=debug-msvc
 |---|---|
 | `build-release-msvc` | Optimized release build (RelWithDebInfo) with MSVC |
 | `build-debug-msvc` | Debug build with MSVC |
-| `release-msvc` | Build preset for release (MSVC) |
-| `debug-msvc` | Build preset for debug (MSVC) |
 | `tests-all` | Run all tests |
 | `tests-unit` | Run unit tests only |
 
